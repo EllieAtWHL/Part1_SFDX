@@ -71,7 +71,7 @@ public with sharing class WeekThreeClassExercises {
 
     }
 
-	//Let's look at another way to loop through a list
+	//Let's look at looping through a list of SObjects
     public static void loopingThroughLists() {
         //Let's get ourselves a list of open Opportunities.  10 Max
 
@@ -84,6 +84,5 @@ public with sharing class WeekThreeClassExercises {
         }
 
     }
-
 
 }
