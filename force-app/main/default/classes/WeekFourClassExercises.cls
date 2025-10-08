@@ -20,9 +20,10 @@ public with sharing class WeekFourClassExercises {
     }
 
   
-    //Let's look at the new For loop syntax we learned.  There are times when you might not know how many times you need to do something
-    //in advance.  This is the perfect tool for those scenarios
-    public static void forEachAccountsexample() {
+    //Let's look at the new For loop syntaxes we learned. A traditional for loop inside of an SObject For each for loop
+    //There are times when you might not know how many times you need to do something in advance.
+    //This is the perfect tool for those scenarios
+    public static void forEachAccountsExample() {
         Integer numberOfOpps = 2;
         //Get all the HotAccounts using SOQL
         List<Account> hotAccounts =
@@ -33,10 +34,10 @@ public with sharing class WeekFourClassExercises {
         //List to hold the opportunities we're creating for later insertion
         List<Opportunity> oppsToInsert = new List<Opportunity>();
 
-        //First we loop through the top accounts
+        //First we loop through the top accounts using the list of account SObjects we queried above
         for (Account a : hotAccounts) {
             //now we need to create however many opportunities were passed in as an argument.  For that, we use an integer to keep track
-            //of how many times we've looped through, stopping when we've done the loop the right number of times
+            //of how many times we've looped through, stopping when we've done the loop the right number of times using a traditional for loop
             for (Integer i = 0; i < numberOfOpps; i++) {
                 System.debug('What is the value of i at this moment?: ' + i);
                 Opportunity opp = new Opportunity();
@@ -53,6 +54,5 @@ public with sharing class WeekFourClassExercises {
         insert oppsToInsert;
 
     }
-
 
 }

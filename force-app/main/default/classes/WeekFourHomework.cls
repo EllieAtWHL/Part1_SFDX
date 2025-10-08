@@ -18,40 +18,32 @@ public with sharing class WeekFourHomework {
             String name = c.FirstName + ' ' + c.LastName;
         }
 
-
         //3.  Can you write a SOQL query from scratch that will return the top 10 Accounts in the org, ordered by annual
         //revenue in decending order?  Print your results in the debug log.
-
-
-        
 
     }
 
     public static void forTheLoveOfForLoops() {
 
-        //1. Take a look at the list and loop below.  It's commented out since it can't run as is.
+        //1. Take a look at the loop below.  It's commented out since it can't run as is.
         // Can you replace the ?? with the number that makes sense based on the comments?
         // Remove the slashes and compile.
         // Can you add an extra counter variable so that you can print out how many times the loop ran in total?
-
 
         //This loop should run 5 times
         //for (Integer i=0; i<??; i++) {
         //  System.debug('i is now: '+i);
         //}
 
-
-        //2.  Below is a loop that iterates through a list.  Can you change it to use the traditional For Loop syntax?  It should print out
+        //Brain teaser:  Below is a loop that iterates through a list.  Can you change it to use the traditional For Loop syntax?  It should print out
         //each account name in the debug log when you're done.
-        //Use the list size to tell you how many loops, and use indexing to fetch values.  If you need help, check the
-        //loopingThroughLists method from before weeks for hints
+        //Use the list size (accountList.size()) to tell you how many loops, and use indexing to fetch values (a[index])
 
         List<Account> accountList = [SELECT Id, Name FROM Account LIMIT 5];
 
         for (Account a : accountList) {
             System.debug('Account Name: ' + a.name);
         }
-
 
     }
 

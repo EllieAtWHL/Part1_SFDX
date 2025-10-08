@@ -9,7 +9,7 @@ public with sharing class WeekThreeHomework {
         //************************************************************************************************************
 
         // 1. Add two more whole numbers to this list using .add()
-        List<Integer> numberList = new List<Integer>{ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 };
+        List<Integer> numberList = new List<Integer>{0, 1, 1, 2, 3, 5, 8, 13, 21, 34};
 
         //Checking our work:
         System.debug('This number should be 12: ' + numberList.size());
@@ -28,7 +28,7 @@ public with sharing class WeekThreeHomework {
 
 		//1. Let's review iterating over a list of stuff.  How about Strings?
 
-		List < String > myStringList = new List < String >{'red', 'yellow', 'green', 'blue'};
+		List<String> myStringList = new List<String>{'red', 'yellow', 'green', 'blue'};
 
 		// using for loop syntax, loop over the list of strings, printing each one out to the debug log.
 
@@ -40,9 +40,9 @@ public with sharing class WeekThreeHomework {
 		Contact c1 = new Contact(FirstName='Sam');
 		Contact c2 = new Contact(FirstName='Diane');
 		Contact c3 = new Contact(FirstName='Coach');
-		List < Contact > myContacts = new List < Contact >{c1,c2,c3};
+		List<Contact> myContacts = new List<Contact>{c1,c2,c3};
 
-		// Your turn!  Using a for loop, print out the first name of each contact on a different line
+		// Your turn!  Using a an SObject for loop, print out the first name of each contact on a different line
 		//hint, you will need to use dot notation!
 
 

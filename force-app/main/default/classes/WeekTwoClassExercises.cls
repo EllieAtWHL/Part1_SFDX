@@ -23,17 +23,22 @@ public with sharing class WeekTwoClassExercises {
             
         */
 
-        Boolean isGreater = 4 > 6;  // Our isGreater variable must be false, since 4 is not greater than 6
+        // Our isGreater variable must be false, since 4 is not greater than 6
+        Boolean isGreater = 4 > 6;  
 
-        Boolean isLess = 2 < 4;  //our isLess must be true, since 2 is less than 4
+        //our isLess must be true, since 2 is less than 4
+        Boolean isLess = 2 < 4; 
 
-        Boolean areEquivalent = (5 == 2 + 3);  //areEquivalent must be true, since 5 is equivalent to 2+3. The parenthesis here aren't necessary, 
-                                               //but do make the code more readable. Note that the single equals sign is to assign a value to our boolean variable, 
-                                               //whereas the double equals sign is a comparison operator
+        //areEquivalent must be true, since 5 is equivalent to 2+3. The parenthesis here aren't necessary, 
+        //but do make the code more readable. Note that the single equals sign is to assign a value to our boolean variable, 
+        //whereas the double equals sign is a comparison operator
+        Boolean areEquivalent = (5 == 2 + 3);  
 
-        Boolean result = (5 > 2 && (10 == 5 * 2)); //result must be true since 5 is greater than 2 AND 10 is equivalent to 5 times 2
+        //result must be true since 5 is greater than 2 AND 10 is equivalent to 5 times 2
+        Boolean result = (5 > 2 && (10 == 5 * 2)); 
 
-        Boolean anotherResult = 2 != 3;  //again, true since 2 does not equal 3
+        //again, true since 2 does not equal 3
+        Boolean anotherResult = 2 != 3;  
         
         Boolean bool = true;
 
@@ -123,40 +128,47 @@ public with sharing class WeekTwoClassExercises {
         //From your reading you know that they are key-value pairs.  So each key, which must be unique, 'maps' to a value.
         //Use a map when you want to be able to quickly get a value based on a key.  Let's look at an example.
 
-        //A map of the names of our restaurant customers, indexed by a custom Id number
+        //A map of the names of the months, indexed by the number
         //In this hypothetical, we're not using a Salesforce Id, just a fake Id stored as an integer.
-        Map<Integer, String> restaurantsById = new Map<Integer, String>();
+        Map<Integer, String> monthsById = new Map<Integer, String>();
 
         //Let's add some entries in the format of: map.put(key, value)
-        restaurantsById.put(1234, 'Pok Pok');
-        restaurantsById.put(8438, 'Toro Bravo');
-        restaurantsById.put(6784, 'Daruma Sushi');
-        restaurantsById.put(48929, 'Moon and Sixpence');
-        restaurantsById.put(89453, 'St. Jacks');
+        monthsById.put(1, 'January');
+        monthsById.put(2, 'February');
+        monthsById.put(3, 'March');
+        monthsById.put(4, 'April');
+        monthsById.put(5, 'May');
+        monthsById.put(6, 'June');
+        monthsById.put(7, 'July');
+        monthsById.put(8, 'August');
+        monthsById.put(9, 'September');
+        monthsById.put(10, 'October');
+        monthsById.put(11, 'November');
+        monthsById.put(12, 'December');
 
         //Ok, as we can see, maps use .put() whereas sets and lists use .add()
 
         //Now that we have a map, how can we get at the data?
 
         //You can use .keySet() to get a Set of the keys in the map (It's a set, since the Keys are unique!)
-        Set<Integer> mapKeysSet = restaurantsById.keySet();
-        System.debug('The KeySet of our Map: ' + mapKeysSet);
+        Set<Integer> mapKeySet = monthsById.keySet();
+        System.debug('The KeySet of our Map: ' + mapKeySet);
 
         //Or, you can use .values() to get a list of all the values in the map (It's a list, since there may be duplicates!)
-        List<String> mapValuesList = restaurantsById.values();
+        List<String> mapValuesList = monthsById.values();
         System.debug('The values in our Map: ' + mapValuesList);
 
         //Ok, now one of the most common uses of a map is when you have a key but need to get the value.  For example
-        //let's say we have a list of our ids, and need to fetch the restaurant name
-        //Let's make a list of Ids and then loop through, fetching the restaurant name.
-        List<Integer> idList = new List<Integer>{ 1234, 6784, 89453 };
+        //let's say we have a list of our ids, and need to fetch the month name
+        //Let's make a list of Ids and then loop through, fetching the month name.
+        List<Integer> idList = new List<Integer>{1,2,3,4};
 
         // for loops are just ways to "loop" through a collection. We will cover this in more detail in Week 3
         for (Integer i : idList) {
             //When we use the get method on a map, and pass in the Id, we get back the value which is associated with that Id.
             //We will cover Maps and Methods in the next few weeks so don't worry if you don't fully understand yet.
-            String restaurantName = restaurantsById.get(i);
-            System.debug('restaurantName: ' + restaurantName);
+            String monthName = monthsById.get(i);
+            System.debug('monthName: ' + monthName);
         }
 
         //You'll see a lot more of maps when we work on Triggers in the comming weeks!
